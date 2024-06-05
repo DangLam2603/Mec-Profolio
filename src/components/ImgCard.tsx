@@ -1,5 +1,7 @@
 import React from "react";
-import "./ImageGrid.css"; // Import the new CSS file
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
+import "./ImageGrid.css";
 
 const imageURLs = Array.from(
   { length: 57 },
@@ -11,7 +13,7 @@ const ImageGrid: React.FC = () => {
     <div className="grid-container">
       {imageURLs.map((url, index) => (
         <div key={index} className="grid-item">
-          <img src={url} alt={`Image ${index + 1}`} />
+          <LazyLoadImage src={url} alt={`Image ${index + 1}`} effect="blur" />
         </div>
       ))}
     </div>

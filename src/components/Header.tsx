@@ -1,23 +1,26 @@
 import React from "react";
+import { Link } from "react-router-dom"; // Assuming you're using React Router for navigation
+import "./Header.css";
 
 interface HeaderProps {
-  categories: string[];
+  categories: { name: string; link: string }[]; // Changed categories to include links
   logoSrc: string;
 }
 
 const Header: React.FC<HeaderProps> = ({ categories, logoSrc }) => {
   return (
-    <header className="flex justify-between items-center p-4 bg-gray-800 text-white">
-      <img src={logoSrc} alt="Logo" className="w-24 h-auto" />{" "}
-      <nav className="flex">
-        {categories.map((category, index) => (
-          <div
-            key={index}
-            className="px-4 py-2 cursor-pointer transition duration-300 hover:bg-gray-600"
-          >
-            {category}
-          </div>
-        ))}
+    <header className="header">
+      <Link to="/">
+        <img src={logoSrc} alt="Logo" />
+      </Link>
+      <nav>
+        <ul>
+          {categories.map((category, index) => (
+            <li key={index}>
+              <Link to={category.link}>{category.name}</Link>
+            </li>
+          ))}
+        </ul>
       </nav>
     </header>
   );

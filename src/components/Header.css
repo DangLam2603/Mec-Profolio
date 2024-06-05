@@ -1,0 +1,44 @@
+/* Header.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #000000; /* Tailwind's bg-gray-800 */
+  color: white; /* Tailwind's text-white */
+  font-family: 'Roboto Mono', monospace;
+}
+
+.header img {
+  width: 6rem; /* Tailwind's w-24 */
+  height: auto;
+}
+
+.header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.header nav ul li {
+  margin-left: 1rem; /* Add space between categories */
+}
+
+.header nav ul li:last-child {
+  margin-right: 0; /* Remove margin from the last category */
+}
+
+.header nav ul li a {
+  color: white; /* Tailwind's text-white */
+  text-decoration: none;
+  padding: 3rem 3rem; /* Increased padding to cover full height */
+  cursor: pointer;
+  transition: background-color 0.3s; /* Tailwind's transition duration-300 */
+}
+
+.header nav ul li a:hover {
+  background-color: #4a5568; /* Tailwind's hover:bg-gray-600 */
+}
